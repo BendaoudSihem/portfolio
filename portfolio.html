@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sihem Bendaoud · Portfolio + extraits formation</title>
+  <!-- Google Fonts + Font Awesome 6 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,500;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f4f7fc;
+      color: #1f2a3f;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ===== HEADER ===== */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 0;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(130deg, #1e2b4f, #2f5e8c, #714a9e);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: gradientShift 8s ease infinite;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1f2a3f;
+      transition: color 0.2s, transform 0.2s;
+      display: inline-block;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 4px;
+    }
+
+    .nav-links a:hover {
+      color: #2f5e8c;
+      transform: translateY(-2px);
+      border-bottom-color: #714a9e;
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 50px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 80px;
+      height: 5px;
+      background: linear-gradient(90deg, #1e2b4f, #714a9e);
+      border-radius: 10px;
+      transition: width 0.35s ease;
+    }
+
+    .section-title:hover::after {
+      width: 160px;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .hero-content {
+      flex: 1 1 350px;
+      animation: fadeUp 1s ease-out;
+    }
+
+    .hero-tag {
+      background: rgba(46, 94, 140, 0.12);
+      color: #1e2b4f;
+      padding: 6px 20px;
+      border-radius: 60px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      display: inline-block;
+      margin-bottom: 20px;
+      border: 1px solid #ffffff70;
+      backdrop-filter: blur(4px);
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero-gradient {
+      background: linear-gradient(145deg, #1e2b4f, #2f5e8c, #714a9e);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      background-size: 200% 200%;
+      animation: gradientShift 6s ease infinite;
+    }
+
+    .hero-content p {
+      font-size: 1.25rem;
+      color: #2c3e50e6;
+      max-width: 550px;
+      margin-bottom: 30px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      border: 1px solid #ccddee;
+      padding: 14px 34px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #1f2a3f;
+      transition: all 0.3s;
+      box-shadow: 0 8px 16px rgba(0, 30, 60, 0.06);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #1e2b4f, #2f5e8c);
+      color: white;
+      border: none;
+      box-shadow: 0 12px 24px rgba(30, 43, 79, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #2f5e8c, #1e2b4f);
+      transform: translateY(-5px);
+      box-shadow: 0 22px 28px rgba(30, 43, 79, 0.4);
+    }
+
+    .btn-outline:hover {
+      background: #ffffff;
+      border-color: #2f5e8c;
+      transform: translateY(-4px);
+      box-shadow: 0 18px 24px rgba(0, 30, 60, 0.12);
+    }
+
+    /* image hero animation flottante */
+    .hero-image {
+      flex: 1 1 300px;
+      display: flex;
+      justify-content: center;
+      animation: float 5s ease-in-out infinite;
+      filter: drop-shadow(0 20px 25px rgba(50, 30, 70, 0.25));
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      width: 360px;
+      height: auto;
+      border-radius: 30% 70% 50% 50% / 40% 40% 60% 60%;
+      background: #b3d2f0;
+      object-fit: cover;
+      aspect-ratio: 1/1;
+      border: 5px solid white;
+      box-shadow: 0 30px 30px -15px #1e2b4f80;
+      transition: border-radius 0.4s, transform 0.4s;
+    }
+
+    .hero-image img:hover {
+      border-radius: 50% 50% 30% 70% / 60% 40% 60% 40%;
+      transform: scale(1.02) rotate(0.8deg);
+    }
+
+    /* ===== COMPÉTENCES ===== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .skill-card {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(8px);
+      border-radius: 30px 16px 30px 16px;
+      padding: 32px 20px;
+      text-align: center;
+      box-shadow: 0 20px 32px -16px #1e2b4f33;
+      transition: 0.3s;
+      border: 1px solid #ffffff;
+    }
+
+    .skill-card i {
+      font-size: 3.2rem;
+      background: linear-gradient(135deg, #1e2b4f, #714a9e);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 18px;
+      transition: transform 0.2s;
+      display: inline-block;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-12px) scale(1.02);
+      border-radius: 16px 30px 16px 30px;
+      box-shadow: 0 30px 40px -15px #2f5e8c;
+      background: white;
+    }
+
+    .skill-card:hover i {
+      transform: scale(1.12) rotate(2deg);
+    }
+
+    /* ===== SLIDER PROJETS ===== */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 36px;
+      margin-top: 30px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 36px;
+      overflow: hidden;
+      box-shadow: 0 18px 30px -12px #1f2a3f40;
+      transition: transform 0.4s, box-shadow 0.4s;
+      border: 1px solid #ffffff;
+    }
+
+    .project-card:hover {
+      transform: translateY(-16px) scale(1.01);
+      box-shadow: 0 30px 50px -16px #1e2b4fcc;
+    }
+
+    /* SLIDER CONTAINER */
+    .slider-container {
+      position: relative;
+      width: 100%;
+      height: 240px;
+      overflow: hidden;
+      background: #d1e0ed;
+    }
+
+    .slider-images {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      height: 100%;
+    }
+
+    .slider-images img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(6px);
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.4rem;
+      color: #1e2b4f;
+      transition: 0.2s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      z-index: 10;
+    }
+
+    .slider-btn:hover {
+      background: white;
+      color: #714a9e;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .prev-btn { left: 12px; }
+    .next-btn { right: 12px; }
+
+    .slider-dots {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 10;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: rgba(255,255,255,0.6);
+      border-radius: 20px;
+      border: 1px solid #1e2b4f30;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .dot.active {
+      background: #1e2b4f;
+      width: 22px;
+      border: 1px solid white;
+    }
+
+    .project-info {
+      padding: 26px 22px 28px;
+    }
+
+    .project-info h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .project-badge {
+      background: #2f5e8c20;
+      padding: 4px 14px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #1e2b4f;
+      letter-spacing: 0.3px;
+    }
+
+    .project-info p {
+      color: #2e405bb3;
+      margin-bottom: 22px;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .tech {
+      background: #ebf2fa;
+      color: #1e2b4f;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 50px;
+    }
+
+    /* ===== EXTRAITS VIDÉO FORMATION ===== */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .video-card {
+      background: white;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 18px 25px -15px #1f2a3f80;
+      transition: 0.4s;
+      border: 1px solid white;
+    }
+
+    .video-card:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 28px 40px -18px #1e2b4f;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      cursor: pointer;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .video-thumbnail {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1e2b4f;
+      font-size: 2rem;
+      transition: 0.2s;
+      pointer-events: none;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+    }
+
+    .video-wrapper:hover .play-button {
+      background: white;
+      transform: translate(-50%, -50%) scale(1.1);
+      color: #714a9e;
+    }
+
+    .video-info {
+      padding: 20px 18px;
+    }
+
+    .video-info h4 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .video-info p {
+      color: #2e405bcc;
+      font-size: 0.95rem;
+    }
+
+    .video-badge {
+      background: #2f5e8c15;
+      color: #1e2b4f;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-top: 12px;
+    }
+    
+    /* ===== PROGRAMMES PDF À TÉLÉCHARGER (NOUVEAU) ===== */
+    .pdf-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin: 50px 0 30px;
+    }
+
+    .pdf-card {
+      background: white;
+      border-radius: 28px;
+      padding: 30px 24px;
+      box-shadow: 0 20px 30px -12px #1e2b4f40;
+      transition: all 0.35s;
+      border: 1px solid #ffffff;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pdf-card:hover {
+      transform: translateY(-14px);
+      box-shadow: 0 30px 40px -15px #1e2b4fcc;
+      border-color: #2f5e8c30;
+    }
+
+    .pdf-icon {
+      font-size: 3.8rem;
+      color: #e74c3c;
+      margin-bottom: 20px;
+      transition: transform 0.3s;
+      filter: drop-shadow(0 6px 8px rgba(231, 76, 60, 0.3));
+    }
+
+    .pdf-card:hover .pdf-icon {
+      transform: scale(1.1) rotate(5deg);
+      animation: pdfPulse 1.5s infinite;
+    }
+
+    .pdf-card h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #1e2b4f;
+    }
+
+    .pdf-desc {
+      color: #2e405be6;
+      margin-bottom: 22px;
+      flex-grow: 1;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .pdf-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      color: #5a6f8c;
+      font-size: 0.95rem;
+    }
+
+    .pdf-meta i {
+      margin-right: 6px;
+      color: #2f5e8c;
+    }
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: linear-gradient(135deg, #1e2b4f, #2f5e8c);
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      margin-top: 8px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .download-btn:hover {
+      background: linear-gradient(135deg, #2f5e8c, #1e2b4f);
+      gap: 16px;
+      transform: scale(1.02);
+      box-shadow: 0 12px 22px #1e2b4f80;
+    }
+
+    .download-btn i {
+      font-size: 1.2rem;
+    }
+
+    .pdf-badge {
+      position: absolute;
+      top: 20px;
+      right: -35px;
+      background: #e74c3c;
+      color: white;
+      padding: 8px 40px;
+      transform: rotate(45deg);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+    }
+
+    /* ===== EXPÉRIENCE FORMATRICE ===== */
+    .teaching-highlight {
+      background: linear-gradient(110deg, #ffffff, #f1f5fe);
+      border-radius: 48px;
+      padding: 48px 42px;
+      margin: 30px 0 40px;
+      box-shadow: 0 25px 35px -20px #1f2a3f80;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+      border: 1px solid white;
+    }
+
+    .teaching-icon {
+      font-size: 4.5rem;
+      background: #1e2b4f;
+      color: white;
+      width: 130px;
+      height: 130px;
+      border-radius: 50% 30% 50% 30%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+      box-shadow: 0 20px 20px -10px #1e2b4f;
+    }
+
+    .teaching-highlight:hover .teaching-icon {
+      border-radius: 30% 50% 30% 50%;
+      background: #714a9e;
+    }
+
+    .teaching-text {
+      flex: 1;
+    }
+
+    .teaching-text h3 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .teaching-text p {
+      font-size: 1.1rem;
+      max-width: 700px;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      margin: 55px 0 30px;
+      flex-wrap: wrap;
+    }
+
+    .contact-item {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #1f2a3f;
+      font-weight: 600;
+      gap: 10px;
+      transition: 0.3s;
+    }
+
+    .contact-item i {
+      font-size: 2.7rem;
+      background: white;
+      padding: 22px;
+      border-radius: 40px;
+      box-shadow: 0 12px 18px -10px #1e2b4f70;
+      transition: 0.25s;
+    }
+
+    .contact-item:hover {
+      transform: translateY(-10px);
+    }
+
+    .contact-item:hover i {
+      background: linear-gradient(135deg, #1e2b4f, #714a9e);
+      color: white;
+      box-shadow: 0 22px 28px #1e2b4fb3;
+      border-radius: 50% 20% 50% 20%;
+    }
+
+    hr {
+      border: none;
+      height: 2px;
+      background: linear-gradient(to right, #ffffff, #b5cbe0, #ffffff);
+      margin: 20px 0 10px;
+    }
+
+    .footer-note {
+      text-align: center;
+      padding: 28px 0 24px;
+      color: #4b6589;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Navigation -->
+    <nav class="navbar">
+      <span class="logo">Sihem<span style="color:#2c3e50;"> Portfolio</span></span>
+      <div class="nav-links">
+        <a href="#projets">Projets</a>
+        <a href="#formation">Formation</a>
+        <a href="#extraits">Extraits vidéo</a>
+        <a href="#programmes">Programmes PDF</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <!-- HERO avec photo -->
+    <section>
+      <div class="hero">
+        <div class="hero-content">
+          <span class="hero-tag"><i class="fas fa-chalkboard-teacher"></i> développeuse · formatrice</span>
+          <h1>Odoo,web, React & <br><span class="hero-gradient">Formatrice informatique</span></h1>
+          <p><i class="fas fa-database" style="color:#2f5e8c;"></i> SQL, Python, JavaScript · +4 ans d'enseignement. <br> Je crée des solutions web robustes et forme aux technologies modernes.</p>
+          
+        </div>
+        <div class="hero-image">
+          <img src="https://images.pexels.com/photos/3758105/pexels-photo-3758105.jpeg?auto=compress&cs=tinysrgb&w=600" alt="femme développeuse souriant">
+        </div>
+      </div>
+    </section>
+
+    <!-- Compétences techniques -->
+    <section id="competences">
+      <h2 class="section-title">stack & expertise</h2>
+      <div class="skills-grid">
+        <div class="skill-card"><i class="fab fa-react"></i><h3>React / Node</h3></div>
+        <div class="skill-card"><i class="fas fa-cube"></i><h3>Odoo / Web</h3></div>
+        <div class="skill-card"><i class="fas fa-database"></i><h3>SQL / PostgreSQL</h3></div>
+        <div class="skill-card"><i class="fas fa-chalkboard"></i><h3>Formatrice</h3></div>
+      </div>
+    </section>
+
+    <!-- PROJETS avec SLIDER (3 projets, chacun avec plusieurs images) -->
+    <section id="projets">
+      <h2 class="section-title">projets phares</h2>
+      <div class="projects-grid">
+        <!-- Projet 1 : Odoo (3 images) -->
+        <div class="project-card">
+          <div class="slider-container" id="slider1">
+            <div class="slider-images">
+              <img src="src/img/odoo.png" alt="Odoo code">
+
+              <img src="src/img/odoo2.png" alt="Odoo code">
+              <img src="src/img/odoo3.png" alt="Odoo code">
+             <img src="src/img/odoo4.png" alt="Odoo code">
+
+            </div>
+            <button class="slider-btn prev-btn" onclick="changeSlide(-1, 'slider1')"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next-btn" onclick="changeSlide(1, 'slider1')"><i class="fas fa-chevron-right"></i></button>
+            <div class="slider-dots" id="dots-slider1"></div>
+          </div>
+          <div class="project-info">
+            <h3>Odoo ERP <span class="project-badge">Module personnalisé</span></h3>
+            <p>Développement des modules sur mesure de gestion de formation
+              point de vente/ site web et d'autres  .</p>
+            <div class="tech-stack"><span class="tech">Python</span><span class="tech">Odoo 12/14/16/17</span><span class="tech">PostgreSQL</span></div>
+          </div>
+        </div>
+
+        <!-- Projet 2 : React (3 images) -->
+        <div class="project-card">
+          <div class="slider-container" id="slider2">
+            <div class="slider-images">
+              <img src="src/img/react1.png?auto=compress&cs=tinysrgb&w=600" alt="React app 1">
+              <img src="src/img/react2.png?auto=compress&cs=tinysrgb&w=600" alt="React app 2">
+              <img src="src/img/react3.png?auto=compress&cs=tinysrgb&w=600" alt="React mobile">
+            </div>
+            <button class="slider-btn prev-btn" onclick="changeSlide(-1, 'slider2')"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next-btn" onclick="changeSlide(1, 'slider2')"><i class="fas fa-chevron-right"></i></button>
+            <div class="slider-dots" id="dots-slider2"></div>
+          </div>
+          <div class="project-info">
+            <h3>Reservation de boats <span class="project-badge">React</span></h3>
+            <p>Application front end pour la reservation des boats realisé par react .</p>
+            <div class="tech-stack"><span class="tech">React</span></div>
+          </div>
+        </div>
+
+        <!-- Projet 3 : EduCode (3 images) -->
+        <div class="project-card">
+          <div class="slider-container" id="slider3">
+            <div class="slider-images">
+              <img src="src/img/web1.png" alt="web">
+              <img src="src/img/web2.png" alt="web 2">
+              <img src="src/img/sql.png" alt="SQL">
+               <img src="src/img/odooF.png" alt="odoo">
+              <img src="src/img/odooF2.png" alt="odoo">
+              <img src="src/img/site1.png" alt="SQL">
+               <img src="src/img/site2.png" alt="odoo">
+              <img src="src/img/site3.png" alt="odoo">
+            </div>
+            <button class="slider-btn prev-btn" onclick="changeSlide(-1, 'slider3')"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next-btn" onclick="changeSlide(1, 'slider3')"><i class="fas fa-chevron-right"></i></button>
+            <div class="slider-dots" id="dots-slider3"></div>
+          </div>
+          <div class="project-info">
+            <h3>Formations en ligne <span class="project-badge">plateforme</span></h3>
+            <p>Formation et realisation d'un site tutoriels interactifs HTML/CSS/JS avec exercices en direct .</p>
+            <p>Formation sur odoo technique, sur sql pour data anlyst, bureautique</p>
+            <div class="tech-stack"><span class="tech">Odoo 17</span><span class="tech">web</span><span class="tech">Microsoft office</span><span class="tech">SQLite/postgresql</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXTRAITS VIDÉO FORMATION (nouvelle section) -->
+    <section id="extraits">
+      <h2 class="section-title">extraits de formation <i class="fas fa-video" style="margin-left: 12px;"></i></h2>
+      <p style="margin-bottom: 20px; font-size: 1.2rem;">Aperçus de mes sessions de formation :Odoo, SQL, web.</p>
+      
+      <div class="video-grid">
+        <!-- Vidéo 1 : react -->
+        <div class="video-card">
+          <div class="video-wrapper" onclick="playVideo(this)">
+            <iframe class="youtube-iframe" data-src="src/video/react.mp4" src="src/video/react.mp4" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <h4><i class="fas fa-cube" style="color:#2f5e8c;"></i> Realisation d'une page web avec react js</h4>
+            <p>La page web est responsive aussi</p>
+          </div>
+        </div>
+        
+        <!-- Vidéo 2 : Odoo module -->
+        <div class="video-card">
+          <div class="video-wrapper" onclick="playVideo(this)">
+            <iframe class="youtube-iframe" data-src="src/video/odoo.mp4" src="src/video/odoo.mp4" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <h4><i class="fas fa-cube" style="color:#2f5e8c;"></i> Extrait de formation odoo</h4>
+            <p>Structure d'un module, champs personnalisés , wizard, rapports et vues..</p>
+            <span class="video-badge">30 h</span>
+          </div>
+        </div>
+
+        <!-- Vidéo 3 : SQL jointures -->
+        <div class="video-card">
+          <div class="video-wrapper" onclick="playVideo(this)">
+            <iframe class="youtube-iframe" data-src="src/video/sql.mp4" src="src/video/sql.mp4" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <h4><i class="fas fa-database" style="color:#2f5e8c;"></i> SQL : Insertion des données</h4>
+            <p>Extrait de formation sur la manipulation de données en sql</p>
+            <span class="video-badge">30h</span>
+          </div>
+        </div>
+
+        <!-- Vidéo 4 : HTML/CSS responsive -->
+        <div class="video-card">
+          <div class="video-wrapper" onclick="playVideo(this)">
+            <iframe class="youtube-iframe" data-src="src/video/web.mp4" src="src/video/web.mp4" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <h4><i class="fab fa-html5" style="color:#2f5e8c;"></i> Web : html,css,js</h4>
+            <p>Extrait de formation sur lacreation des tableaux avec html</p>
+            <span class="video-badge">30h</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expérience formatrice -->
+    <section id="formation">
+      <h2 class="section-title">👩‍🏫 parcours pédagogique</h2>
+      <div class="teaching-highlight">
+        <div class="teaching-icon"><i class="fas fa-heart"></i></div>
+        <div class="teaching-text">
+          <h3>Plusieurs apprenant·es formé·es</h3>
+          <p>Depuis 2020, je conçois et anime des formations sur mesure (presentiel / en ligne) : initiation au code (HTML/CSS/JS), développement web avec React, bases de données SQL, et prise en main d'Odoo (ERP, création de modules).</p>
+        </div>
+      </div>
+    </section>
+    
+   <!-- NOUVELLE SECTION : PROGRAMMES DE FORMATION À TÉLÉCHARGER (PDF) -->
+    <section id="programmes">
+      <h2 class="section-title">programmes de formation <i class="fas fa-file-pdf" style="color: #e74c3c; margin-left: 12px;"></i></h2>
+      <p style="margin-bottom: 20px; font-size: 1.2rem;">Téléchargez les programmes détaillés de mes formations au format PDF.</p>
+      
+      <div class="pdf-grid">
+        <!-- Programme Bureautique -->
+        <div class="pdf-card">
+          
+          <div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>
+          <h3>Bureautique</h3>
+          <p class="pdf-desc">Formation complète de 24h : creation de fichier et dossier, word, ppt, excel </p>
+          <div class="pdf-meta">
+            <span><i class="far fa-file-pdf"></i> 3 pages</span>
+            <span><i class="far fa-calendar-alt"></i> Mis à jour 2026</span>
+          </div>
+          <a href="src/pdfs/bureautique.pdf" class="download-btn" onclick="alert('Téléchargement simulé : programme-react.pdf')"><i class="fas fa-download"></i> Télécharger le PDF</a>
+        </div>
+
+        <!-- Programme Odoo -->
+        <div class="pdf-card">
+          <div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>
+          <h3>Odoo développement</h3>
+          <p class="pdf-desc">Module Odoo de A à Z : création de modules, modèles, vues, sécurité, API, intégration. Formation de 30 h.</p>
+          <div class="pdf-meta">
+            <span><i class="far fa-file-pdf"></i> 2 pages</span>
+            <span><i class="far fa-calendar-alt"></i> Mis à jour 2026</span>
+          </div>
+          <a href="src/pdfs/odoo.pdf" class="download-btn" onclick="alert('Téléchargement simulé : programme-odoo.pdf')"><i class="fas fa-download"></i> Télécharger le PDF</a>
+        </div>
+
+        <!-- Programme SQL -->
+        <div class="pdf-card">
+          <div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>
+          <h3>SQL & Base de données</h3>
+          <p class="pdf-desc">Maîtrisez PostgreSQL : requêtes, jointures, sous-requêtes, optimisation, modélisation. 30 h de formation pratique et théorique.</p>
+          <div class="pdf-meta">
+            <span><i class="far fa-file-pdf"></i> 1 page</span>
+            <span><i class="far fa-calendar-alt"></i> Mis à jour 2026</span>
+          </div>
+          <a href="src/pdfs/sql.pdf" class="download-btn" onclick="alert('Téléchargement simulé : programme-sql.pdf')"><i class="fas fa-download"></i> Télécharger le PDF</a>
+        </div>
+
+        <!-- Programme HTML/CSS/JS -->
+        <div class="pdf-card">
+          <div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>
+          <h3>Front-end débutant</h3>
+          <p class="pdf-desc">Initiation au développement web : HTML5, CSS3, JavaScript ES6, responsive design, projets pratiques.30h.</p>
+          <div class="pdf-meta">
+            <span><i class="far fa-file-pdf"></i> 1 page</span>
+            <span><i class="far fa-calendar-alt"></i> Mis à jour 2026</span>
+          </div>
+          <a href="src/pdfs/web.pdf" class="download-btn" onclick="alert('Téléchargement simulé : programme-frontend.pdf')" ><i class="fas fa-download"></i> Télécharger le PDF</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" style="padding-bottom: 30px;">
+      <h2 class="section-title">échanger & collaborer</h2>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/sihem-bendaoud/" class="contact-item"><i class="fab fa-linkedin-in"></i><span>linkedin</span></a>
+        <a href="https://github.com/BendaoudSihem" class="contact-item"><i class="fab fa-github"></i><span>github</span></a>
+        <a href="sihemmbendaoud@gmail.com" class="contact-item"><i class="fas fa-envelope"></i><span>email</span></a>
+      </div>
+    </section>
+
+    <hr>
+    <footer class="footer-note">
+      <p>© 2026 Sihem Bendaoud · développeuse Odoo/React & formatrice ·</p>
+    </footer>
+  </div>
+
+  <!-- JavaScript pour les sliders et la lecture vidéo -->
+  <script>
+    // ----- GESTION DES SLIDERS PROJETS -----
+    // Initialiser chaque slider avec ses propres données
+    const sliders = {};
+
+    function initSlider(sliderId) {
+      const container = document.getElementById(sliderId);
+      if (!container) return;
+      const imagesContainer = container.querySelector('.slider-images');
+      const images = imagesContainer ? Array.from(imagesContainer.children) : [];
+      const dotsContainer = document.getElementById(`dots-${sliderId}`);
+      
+      if (!images.length) return;
+
+      // État du slider
+      sliders[sliderId] = {
+        currentIndex: 0,
+        total: images.length,
+        imagesContainer,
+        dotsContainer
+      };
+
+      // Créer les dots
+      if (dotsContainer) {
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < images.length; i++) {
+          const dot = document.createElement('span');
+          dot.classList.add('dot');
+          if (i === 0) dot.classList.add('active');
+          dot.addEventListener('click', () => goToSlide(sliderId, i));
+          dotsContainer.appendChild(dot);
+        }
+      }
+
+      updateSlider(sliderId);
+    }
+
+    function changeSlide(direction, sliderId) {
+      const slider = sliders[sliderId];
+      if (!slider) return;
+      slider.currentIndex = (slider.currentIndex + direction + slider.total) % slider.total;
+      updateSlider(sliderId);
+    }
+
+    function goToSlide(sliderId, index) {
+      const slider = sliders[sliderId];
+      if (!slider) return;
+      slider.currentIndex = index;
+      updateSlider(sliderId);
+    }
+
+    function updateSlider(sliderId) {
+      const slider = sliders[sliderId];
+      if (!slider || !slider.imagesContainer) return;
+      
+      // Déplacer le conteneur
+      const width = slider.imagesContainer.clientWidth;
+      slider.imagesContainer.style.transform = `translateX(-${slider.currentIndex * width}px)`;
+
+      // Mettre à jour les dots
+      if (slider.dotsContainer) {
+        const dots = slider.dotsContainer.children;
+        for (let i = 0; i < dots.length; i++) {
+          dots[i].classList.toggle('active', i === slider.currentIndex);
+        }
+      }
+    }
+
+    // Initialiser tous les sliders après le chargement
+    document.addEventListener('DOMContentLoaded', () => {
+      initSlider('slider1');
+      initSlider('slider2');
+      initSlider('slider3');
+
+      // Recalculer au redimensionnement
+      window.addEventListener('resize', () => {
+        updateSlider('slider1');
+        updateSlider('slider2');
+        updateSlider('slider3');
+      });
+    });
+
+    // ----- LECTURE VIDÉO (optionnel : pour remplacer l'iframe si besoin) -----
+    // Les iframes sont déjà chargées avec l'URL YouTube, pas besoin de fonction playVideo
+    // Mais on garde une fonction pour éviter les erreurs
+    function playVideo(element) {
+      // Rien à faire car les iframes sont déjà intégrées
+      // Si on voulait un lecteur personnalisé, on pourrait remplacer une miniature par l'iframe
+    }
+  </script>
+</body>
+</html>
